@@ -172,7 +172,7 @@ import zipfile
 from hashlib import md5, sha256
 from urllib.error import HTTPError, URLError
 
-from urllib.request import HTTPRedirectHandler, build_opener, urlopen
+from urllib.request import HTTPRedirectHandler, build_opener
 
 
 class _NoRedirectHandler(HTTPRedirectHandler):
@@ -258,7 +258,6 @@ def _validate_url(url, context="URL"):
             _check_ip_blocked(resolved_ip, url, context)
     except OSError:
         pass  # Cannot resolve — treat as safe hostname
-
 
 
 from xml.etree import ElementTree
